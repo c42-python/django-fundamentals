@@ -16,6 +16,11 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
+# import the module containing view function
+from .views import welcome
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    # exact match simply saying 'welcome' would do a contains match
+    url('^welcome$', welcome)
 ]
